@@ -1,5 +1,12 @@
 package types
 
+// TestCase for symbols set
+type TestCase struct {
+	Content string
+	Results []string
+	Set     CommentSymbolSet
+}
+
 // Config map of keyword with error level
 type Config map[string]uint8
 

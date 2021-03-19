@@ -1,4 +1,4 @@
-package comments
+package symbols
 
 import "github.com/mishamyrt/compars/v1/pkg/types"
 
@@ -14,7 +14,7 @@ var CommentSymbols = map[string]types.CommentSymbolSet{
 		MultilineStart: "'''",
 		MultilineEnd:   "'''",
 	},
-	"html": {
+	"xml": {
 		Inline:         "",
 		MultilineStart: "<!--",
 		MultilineEnd:   "-->",
