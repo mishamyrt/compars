@@ -27,6 +27,10 @@ func RunTests(t *testing.T, parse CommentParser) {
 	for i, c := range testCases {
 		fmt.Printf("Running %d from %d\n", i, total)
 		res := parse(ScannerFrom(c.Content), c.Set)
+		if len(res) != len(c.Results) {
+			t.Errorf("Wrong count: \"%d\". Should be \"%d\"", len(res), len(c.Results))
+			t.Fail()
+		}
 		for i, comment := range res {
 			if comment.Text != c.Results[i] {
 				t.Errorf("Wrong text: \"%s\". Should be \"%s\"", comment.Text, c.Results[i])
