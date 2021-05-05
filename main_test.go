@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"strings"
 	"testing"
 
@@ -32,12 +31,13 @@ var testCases = []types.TestCase{
 func RunTests(t *testing.T, parse CommentParser) {
 	total := len(testCases)
 	for i, c := range testCases {
-		fmt.Printf("Running %d from %d\n", i, total)
+		t.Logf("Running %d from %d\n", i+1, total)
+		t.Log("Set: ", c.Set)
 		res := parse(ScannerFrom(c.Content), c.Set)
 		if len(res) != len(c.Results) {
-			t.Errorf("Wrong count: \"%d\". Should be \"%d\"", len(res), len(c.Results))
 			t.Logf("Obtained: %s", strings.Join(getStrings(res), ", "))
 			t.Logf("Expected: %s", strings.Join(c.Results, ", "))
+			t.Errorf("Wrong count: %d. Should be %d", len(res), len(c.Results))
 			t.Fail()
 		}
 		for i, comment := range res {
