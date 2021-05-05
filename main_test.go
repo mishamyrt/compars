@@ -17,6 +17,13 @@ func ScannerFrom(input string) *bufio.Scanner {
 
 type CommentParser func(s *bufio.Scanner, set types.CommentSymbolSet) []types.Comment
 
+func getStrings(r []types.Comment) (comments []string) {
+	for _, c := range r {
+		comments = append(comments, c.Text)
+	}
+	return
+}
+
 var testCases = []types.TestCase{
 	cases.PythonTestCase,
 	cases.XMLTestCase,
@@ -29,6 +36,8 @@ func RunTests(t *testing.T, parse CommentParser) {
 		res := parse(ScannerFrom(c.Content), c.Set)
 		if len(res) != len(c.Results) {
 			t.Errorf("Wrong count: \"%d\". Should be \"%d\"", len(res), len(c.Results))
+			t.Logf("Obtained: %s", strings.Join(getStrings(res), ", "))
+			t.Logf("Expected: %s", strings.Join(c.Results, ", "))
 			t.Fail()
 		}
 		for i, comment := range res {
