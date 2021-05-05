@@ -14,5 +14,5 @@ Multiline
 print("Hello, World!")
 	`,
 	Results: []string{"Single line", "Multiline"},
-	Set:     symbols.ExtensionsCommentSet["html"],
+	Set:     symbols.ExtensionsCommentSet["py"],
 }
