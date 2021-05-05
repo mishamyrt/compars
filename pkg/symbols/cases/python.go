@@ -8,9 +8,9 @@ import (
 var PythonTestCase = types.TestCase{
 	Content: `
 # Single line
-"""
+'''
 Multiline
-"""
+'''
 print("Hello, World!")
 	`,
 	Results: []string{"Single line", "Multiline"},
