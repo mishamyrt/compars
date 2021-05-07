@@ -1,6 +1,6 @@
 package symbols
 
-import "github.com/mishamyrt/compars/v1/pkg/types"
+import "github.com/mishamyrt/compars/pkg/types"
 
 var CStyleMultiline = types.MultilineSet{
 	Start: "/*",

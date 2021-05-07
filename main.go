@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"strings"
 
-	"github.com/mishamyrt/compars/v1/pkg/substring"
-	"github.com/mishamyrt/compars/v1/pkg/types"
+	"github.com/mishamyrt/compars/pkg/substring"
+	"github.com/mishamyrt/compars/pkg/types"
 )
 
 // Parse comments from given scanner

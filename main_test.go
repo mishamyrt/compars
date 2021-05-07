@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mishamyrt/compars/v1/pkg/symbols/cases"
-	"github.com/mishamyrt/compars/v1/pkg/types"
+	"github.com/mishamyrt/compars/pkg/symbols/cases"
+	"github.com/mishamyrt/compars/pkg/types"
 )
 
 // ScannerFrom creates bufio.Scanner instance from string

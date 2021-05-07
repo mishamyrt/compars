@@ -1,8 +1,8 @@
 package cases
 
 import (
-	"github.com/mishamyrt/compars/v1/pkg/symbols"
-	"github.com/mishamyrt/compars/v1/pkg/types"
+	"github.com/mishamyrt/compars/pkg/symbols"
+	"github.com/mishamyrt/compars/pkg/types"
 )
 
 var XMLTestCase = types.TestCase{

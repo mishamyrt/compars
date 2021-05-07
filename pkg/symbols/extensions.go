@@ -3,7 +3,7 @@ package symbols
 import (
 	"errors"
 
-	"github.com/mishamyrt/compars/v1/pkg/types"
+	"github.com/mishamyrt/compars/pkg/types"
 )
 
 // ExtensionsCommentSet is map with file extensions and comment sets

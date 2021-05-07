@@ -1,3 +1,3 @@
-module github.com/mishamyrt/compars/v1
+module github.com/mishamyrt/compars
 
 go 1.15
