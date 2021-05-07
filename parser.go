@@ -11,12 +11,10 @@ import (
 // Parse comments from given scanner.
 func Parse(s *bufio.Scanner, set types.CommentSymbolSet) []types.Comment {
 	var results []types.Comment
-	var line string
-	var lineNumber int
-	var inMultiline bool
-	var multilinePart string
-	var multilineStartLine int
 	var multilineSet types.MultilineSet
+	var multilinePart, line string
+	var multilineStartLine, lineNumber int
+	var inMultiline bool
 
 	appendComment := func(text string, number int) {
 		results = append(results, types.Comment{
