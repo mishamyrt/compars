@@ -8,7 +8,7 @@ import (
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
-// Parse comments from given scanner
+// Parse comments from given scanner.
 func Parse(s *bufio.Scanner, set types.CommentSymbolSet) []types.Comment {
 	var results []types.Comment
 	var line string
@@ -31,9 +31,10 @@ func Parse(s *bufio.Scanner, set types.CommentSymbolSet) []types.Comment {
 
 		if inMultiline {
 			if strings.Contains(line, multilineSet.End) {
+				inMultiline = false
 				multilinePart += substring.GetPrevious(line, multilineSet.End)
 				appendComment(multilinePart, multilineStartLine)
-				inMultiline = false
+
 				continue
 			} else {
 				multilinePart += line

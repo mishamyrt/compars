@@ -6,7 +6,7 @@ import (
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
-// ExtensionsCommentSet is map with file extensions and comment sets
+// ExtensionsCommentSet is map with file extensions and comment sets.
 var ExtensionsCommentSet = map[string]types.CommentSymbolSet{
 	"js":   CommentSymbols["c-style"],
 	"jsx":  CommentSymbols["c-style"],
@@ -23,5 +23,5 @@ func GetSetByExtension(ext string) (types.CommentSymbolSet, error) {
 	if val, ok := ExtensionsCommentSet[ext]; ok {
 		return val, nil
 	}
-	return types.CommentSymbolSet{}, errors.New("Extension isn't supported yet")
+	return types.CommentSymbolSet{}, errors.New("extension isn't supported yet")
 }

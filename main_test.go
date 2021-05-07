@@ -1,15 +1,16 @@
-package main
+package main_test
 
 import (
 	"bufio"
 	"strings"
 	"testing"
 
+	main "github.com/mishamyrt/compars"
 	"github.com/mishamyrt/compars/pkg/symbols/cases"
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
-// ScannerFrom creates bufio.Scanner instance from string
+// ScannerFrom creates bufio.Scanner instance from string.
 func ScannerFrom(input string) *bufio.Scanner {
 	return bufio.NewScanner(strings.NewReader(input))
 }
@@ -41,6 +42,7 @@ func RunTests(t *testing.T, parse CommentParser) {
 			t.Errorf("Wrong count: %d. Should be %d", len(res), len(c.Results))
 			t.Fail()
 		}
+
 		for i, comment := range res {
 			if i > len(c.Results)-1 {
 				t.Errorf("Unknown text: \"%s\"", comment.Text)
@@ -54,5 +56,5 @@ func RunTests(t *testing.T, parse CommentParser) {
 }
 
 func TestParser(t *testing.T) {
-	RunTests(t, Parse)
+	RunTests(t, main.Parse)
 }

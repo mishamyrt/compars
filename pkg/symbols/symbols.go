@@ -7,7 +7,7 @@ var CStyleMultiline = types.MultilineSet{
 	End:   "*/",
 }
 
-// CommentSymbols is allowed comment symbol set
+// CommentSymbols is allowed comment symbol set.
 var CommentSymbols = map[string]types.CommentSymbolSet{
 	"c-style": {
 		Inline:    []string{"//"},
