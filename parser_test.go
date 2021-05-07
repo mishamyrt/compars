@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	main "github.com/mishamyrt/compars"
+	"github.com/mishamyrt/compars"
 	"github.com/mishamyrt/compars/pkg/symbols/cases"
 	"github.com/mishamyrt/compars/pkg/types"
 )
@@ -56,5 +56,5 @@ func RunTests(t *testing.T, parse CommentParser) {
 }
 
 func TestParser(t *testing.T) {
-	RunTests(t, main.Parse)
+	RunTests(t, compars.Parse)
 }
