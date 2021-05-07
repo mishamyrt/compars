@@ -1,4 +1,4 @@
-package main_test
+package compars_test
 
 import (
 	"bufio"
