@@ -8,12 +8,12 @@ import (
 var XMLTestCase = types.TestCase{
 	Content: `
 <html>
-	<!-- Single line -->
+	<!-- Single line XML comment -->
 	<!--
-		Multiline
+		Multiline XML comment
 	-->
 </html>
 	`,
-	Results: []string{"Single line", "Multiline"},
+	Results: []string{"Single line XML comment", "Multiline XML comment"},
 	Set:     symbols.ExtensionsCommentSet["html"],
 }

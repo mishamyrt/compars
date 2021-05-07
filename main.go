@@ -11,55 +11,58 @@ import (
 // Parse comments from given scanner
 func Parse(s *bufio.Scanner, set types.CommentSymbolSet) []types.Comment {
 	var results []types.Comment
-	lineNumber := 0
-	multilineStart := 0
-	line := ""
-	comment := ""
-	inMultiline := false
+	var line string
+	var lineNumber int
+	var inMultiline bool
+	var multilinePart string
+	var multilineStartLine int
+	var multilineSet types.MultilineSet
 
-	hasInline := len(set.Inline) > 0
+	appendComment := func(text string, number int) {
+		results = append(results, types.Comment{
+			Text: substring.Trim(text),
+			Line: number,
+		})
+	}
 
 	for s.Scan() {
 		lineNumber++
 		line = s.Text()
 
-		if !inMultiline && strings.Contains(line, set.MultilineStart) {
-			subLine := substring.GetSubsequent(set.MultilineStart, line)
-			if strings.Contains(subLine, set.MultilineEnd) {
-				results = append(results, types.Comment{
-					Text: substring.Trim(
-						substring.GetPrevious(set.MultilineEnd, subLine)),
-					Line: lineNumber,
-				})
+		if inMultiline {
+			if strings.Contains(line, multilineSet.End) {
+				multilinePart += substring.GetPrevious(line, multilineSet.End)
+				appendComment(multilinePart, multilineStartLine)
+				inMultiline = false
+				continue
 			} else {
-				inMultiline = true
-				multilineStart = lineNumber
-				comment += substring.GetSubsequent(set.MultilineStart, line) + "\n"
+				multilinePart += line
+				continue
 			}
-			continue
+		} else {
+			for _, m := range set.Multiline {
+				if strings.Contains(line, m.Start) {
+					line = substring.GetSubsequent(line, m.Start)
+					if strings.Contains(line, m.End) {
+						line = substring.GetPrevious(line, m.End)
+						appendComment(line, lineNumber)
+						continue
+					} else {
+						inMultiline = true
+						multilineSet = m
+						multilinePart = line
+						multilineStartLine = lineNumber
+						continue
+					}
+				}
+			}
 		}
 
-		if inMultiline && strings.Contains(line, set.MultilineEnd) {
-			inMultiline = false
-			comment += substring.GetPrevious(set.MultilineEnd, line)
-			results = append(results, types.Comment{
-				Text: substring.Trim(comment),
-				Line: multilineStart,
-			})
-			comment = ""
-			continue
-		} else if inMultiline {
-			comment += line + "\n"
-			continue
-		}
-
-		if hasInline && strings.Contains(line, set.Inline) {
-			results = append(results,
-				types.Comment{
-					Text: substring.Trim(
-						substring.GetSubsequent(set.Inline, line)),
-					Line: lineNumber,
-				})
+		for _, inlineSymbol := range set.Inline {
+			if strings.Contains(line, inlineSymbol) {
+				line = substring.GetSubsequent(line, inlineSymbol)
+				appendComment(line, lineNumber)
+			}
 		}
 	}
 	return results

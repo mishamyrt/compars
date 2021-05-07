@@ -9,10 +9,13 @@ var PythonTestCase = types.TestCase{
 	Content: `
 # Single line
 '''
-Multiline
+Multiline single
 '''
+"""
+Multiline quotes
+"""
 print("Hello, World!")
 	`,
-	Results: []string{"Single line", "Multiline"},
+	Results: []string{"Single line", "Multiline single", "Multiline quotes"},
 	Set:     symbols.ExtensionsCommentSet["py"],
 }

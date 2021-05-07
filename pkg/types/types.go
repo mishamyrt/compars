@@ -24,9 +24,14 @@ type Comment struct {
 	Text string
 }
 
+// MultilineSet is language-specific mutliline symbol set
+type MultilineSet struct {
+	Start string
+	End   string
+}
+
 // CommentSymbolSet is language-specific symbol set
 type CommentSymbolSet struct {
-	Inline         string
-	MultilineStart string
-	MultilineEnd   string
+	Inline    []string
+	Multiline []MultilineSet
 }
