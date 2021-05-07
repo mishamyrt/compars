@@ -12,13 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          CC_TEST_REPORTER_ID: f6e3d8596abc6064ac1bcf10200ed8c45bd0c489dfd180a014d4f958869bf4eb
-        with:
-          coverageCommand: go test -coverprofile c.out ./...
-          debug: true
+      - name: Test
+        run: go test -v ./...
   golangci:
     name: Lint
     runs-on: ubuntu-latest
