@@ -53,6 +53,6 @@ func RunTests(t *testing.T, parse CommentParser) {
 	}
 }
 
-func TestParserImpl(t *testing.T) {
+func TestParser(t *testing.T) {
 	RunTests(t, Parse)
 }
