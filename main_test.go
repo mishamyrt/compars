@@ -41,7 +41,10 @@ func RunTests(t *testing.T, parse CommentParser) {
 			t.Fail()
 		}
 		for i, comment := range res {
-			if comment.Text != c.Results[i] {
+			if i > len(c.Results)-1 {
+				t.Errorf("Unknown text: \"%s\"", comment.Text)
+				t.Fail()
+			} else if comment.Text != c.Results[i] {
 				t.Errorf("Wrong text: \"%s\". Should be \"%s\"", comment.Text, c.Results[i])
 				t.Fail()
 			}
