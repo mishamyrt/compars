@@ -26,6 +26,7 @@ func getStrings(r []types.Comment) (comments []string) {
 var testCases = []types.TestCase{
 	cases.PythonTestCase,
 	cases.XMLTestCase,
+	cases.PHPTestCase,
 }
 
 func RunTests(t *testing.T, parse CommentParser) {

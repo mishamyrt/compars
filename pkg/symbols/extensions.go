@@ -13,6 +13,7 @@ var ExtensionsCommentSet = map[string]types.CommentSymbolSet{
 	"ts":   CommentSymbols["c-style"],
 	"tsx":  CommentSymbols["c-style"],
 	"go":   CommentSymbols["c-style"],
+	"php":  CommentSymbols["php"],
 	"py":   CommentSymbols["python"],
 	"html": CommentSymbols["xml"],
 	"xml":  CommentSymbols["xml"],
