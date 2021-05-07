@@ -21,17 +21,29 @@ func TrimSuite(t *testing.T, trim Trimmer) {
 }
 
 func SubsequentSuite(t *testing.T, sub Subsequenter) {
-	res := sub("Junk :Test", ":")
+	testString := "Junk :Test"
+	res := sub(testString, ":")
 	if res != "Test" {
+		t.Errorf("Wrong subsequent: \"%s\"", res)
+		t.Fail()
+	}
+	res = sub(testString, "*")
+	if res != "" {
 		t.Errorf("Wrong subsequent: \"%s\"", res)
 		t.Fail()
 	}
 }
 
 func PreviousSuite(t *testing.T, prev Previouser) {
-	res := prev("Test: Junk", ":")
+	testString := "Test: Junk"
+	res := prev(testString, ":")
 	if res != "Test" {
 		t.Errorf("Wrong previous: \"%s\"", res)
+		t.Fail()
+	}
+	res = prev(testString, "*")
+	if res != "" {
+		t.Errorf("Wrong subsequent: \"%s\"", res)
 		t.Fail()
 	}
 }
