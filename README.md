@@ -1,4 +1,4 @@
-# Compars [![release](https://img.shields.io/github/v/tag/mishamyrt/compars?sort=semver)](https://github.com/mishamyrt/compars/tags)
+# Compars [![release](https://img.shields.io/github/v/tag/mishamyrt/compars?sort=semver)](https://github.com/mishamyrt/compars/tags) [![Quality assurance](https://github.com/mishamyrt/compars/actions/workflows/qa.yaml/badge.svg)](https://github.com/mishamyrt/compars/actions/workflows/qa.yaml)
 
 <img align="right" width="128" height="128"
      alt="Logo"
