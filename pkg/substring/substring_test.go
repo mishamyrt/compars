@@ -21,7 +21,7 @@ func TrimSuite(t *testing.T, trim Trimmer) {
 }
 
 func SubsequentSuite(t *testing.T, sub Subsequenter) {
-	res := sub(":", "Junk :Test")
+	res := sub("Junk :Test", ":")
 	if res != "Test" {
 		t.Errorf("Wrong subsequent: \"%s\"", res)
 		t.Fail()
@@ -29,17 +29,9 @@ func SubsequentSuite(t *testing.T, sub Subsequenter) {
 }
 
 func PreviousSuite(t *testing.T, prev Previouser) {
-	res := prev(":", "Test: Junk")
+	res := prev("Test: Junk", ":")
 	if res != "Test" {
 		t.Errorf("Wrong previous: \"%s\"", res)
-		t.Fail()
-	}
-}
-
-func MidstSuite(t *testing.T, midst Midster) {
-	res := midst("<!--", "-->", "<!--Test-->")
-	if res != "Test" {
-		t.Errorf("Wrong midst: \"%s\"", res)
 		t.Fail()
 	}
 }
@@ -54,8 +46,4 @@ func TestSubsequent(t *testing.T) {
 
 func TestPrevious(t *testing.T) {
 	PreviousSuite(t, substring.GetPrevious)
-}
-
-func TestMidst(t *testing.T) {
-	MidstSuite(t, substring.GetMidst)
 }
