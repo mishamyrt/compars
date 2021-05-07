@@ -1,4 +1,4 @@
-# Compars [![release](https://img.shields.io/github/v/tag/mishamyrt/compars?sort=semver)](https://github.com/mishamyrt/compars/tags) [![Quality assurance](https://github.com/mishamyrt/compars/actions/workflows/qa.yaml/badge.svg)](https://github.com/mishamyrt/compars/actions/workflows/qa.yaml)
+# Compars [![release](https://img.shields.io/github/v/tag/mishamyrt/compars?sort=semver)](https://github.com/mishamyrt/compars/tags)[![Quality assurance](https://github.com/mishamyrt/compars/actions/workflows/qa.yaml/badge.svg)](https://github.com/mishamyrt/compars/actions/workflows/qa.yaml)[![Maintainability](https://api.codeclimate.com/v1/badges/96ab89e362487fda5926/maintainability)](https://codeclimate.com/github/mishamyrt/compars/maintainability)
 
 <img align="right" width="128" height="128"
      alt="Logo"
