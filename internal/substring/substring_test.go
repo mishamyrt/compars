@@ -3,7 +3,7 @@ package substring_test
 import (
 	"testing"
 
-	"github.com/mishamyrt/compars/pkg/substring"
+	"github.com/mishamyrt/compars/internal/substring"
 )
 
 type Trimmer func(text string) string

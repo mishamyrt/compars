@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"strings"
 
-	"github.com/mishamyrt/compars/pkg/substring"
+	"github.com/mishamyrt/compars/internal/substring"
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
