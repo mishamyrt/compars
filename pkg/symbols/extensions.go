@@ -23,8 +23,7 @@ var ExtensionsCommentSet = map[string]types.CommentSymbolSet{
 
 // GetSetByExtension returns comment symbol set for the extension
 func GetSetByExtension(ext string) (types.CommentSymbolSet, error) {
-	ext = ext[1 : len(ext)-1]
-	if val, ok := ExtensionsCommentSet[ext]; ok {
+	if val, ok := ExtensionsCommentSet[ext[1:]]; ok {
 		return val, nil
 	}
 	return types.CommentSymbolSet{}, errors.New("extension isn't supported yet")
