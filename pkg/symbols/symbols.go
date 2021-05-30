@@ -2,7 +2,7 @@ package symbols
 
 import "github.com/mishamyrt/compars/pkg/types"
 
-var CStyleMultiline = types.MultilineSet{
+var cStyleMultiline = types.MultilineSet{
 	Start: "/*",
 	End:   "*/",
 }
@@ -11,7 +11,7 @@ var CStyleMultiline = types.MultilineSet{
 var CommentSymbols = map[string]types.CommentSymbolSet{
 	"c-style": {
 		Inline:    []string{"//"},
-		Multiline: []types.MultilineSet{CStyleMultiline},
+		Multiline: []types.MultilineSet{cStyleMultiline},
 	},
 	"python": {
 		Inline: []string{"#"},
@@ -37,7 +37,7 @@ var CommentSymbols = map[string]types.CommentSymbolSet{
 	},
 	"php": {
 		Inline:    []string{"//", "#"},
-		Multiline: []types.MultilineSet{CStyleMultiline},
+		Multiline: []types.MultilineSet{cStyleMultiline},
 	},
 	"sh": {
 		Inline: []string{"#"},
