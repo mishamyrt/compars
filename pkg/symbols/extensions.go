@@ -17,6 +17,8 @@ var ExtensionsCommentSet = map[string]types.CommentSymbolSet{
 	"py":   CommentSymbols["python"],
 	"html": CommentSymbols["xml"],
 	"xml":  CommentSymbols["xml"],
+	"sh":   CommentSymbols["sh"],
+	"bash": CommentSymbols["sh"],
 }
 
 func GetSetByExtension(ext string) (types.CommentSymbolSet, error) {

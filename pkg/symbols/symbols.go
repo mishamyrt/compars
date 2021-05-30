@@ -39,4 +39,7 @@ var CommentSymbols = map[string]types.CommentSymbolSet{
 		Inline:    []string{"//", "#"},
 		Multiline: []types.MultilineSet{CStyleMultiline},
 	},
+	"sh": {
+		Inline: []string{"#"},
+	},
 }

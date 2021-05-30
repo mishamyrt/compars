@@ -28,6 +28,7 @@ var testCases = []types.TestCase{
 	cases.PythonTestCase,
 	cases.XMLTestCase,
 	cases.PHPTestCase,
+	cases.ShellTestCase,
 }
 
 func RunTests(t *testing.T, parse CommentParser) {
