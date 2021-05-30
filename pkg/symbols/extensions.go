@@ -21,7 +21,7 @@ var ExtensionsCommentSet = map[string]types.CommentSymbolSet{
 	"bash": CommentSymbols["sh"],
 }
 
-// GetSetByExtension returns comment symbol set for the extension
+// GetSetByExtension returns comment symbol set for the extension.
 func GetSetByExtension(ext string) (types.CommentSymbolSet, error) {
 	if val, ok := ExtensionsCommentSet[ext[1:]]; ok {
 		return val, nil
