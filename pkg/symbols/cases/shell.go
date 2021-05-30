@@ -5,6 +5,7 @@ import (
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
+// ShellTestCase is comment parser test case for shell scripts.
 var ShellTestCase = types.TestCase{
 	Content: `
 # Single line comment

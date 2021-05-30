@@ -5,6 +5,7 @@ import (
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
+// XMLTestCase is comment parser test case for XML based languages.
 var XMLTestCase = types.TestCase{
 	Content: `
 <html>

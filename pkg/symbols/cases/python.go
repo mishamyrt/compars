@@ -5,6 +5,7 @@ import (
 	"github.com/mishamyrt/compars/pkg/types"
 )
 
+// PythonTestCase is comment parser test case for Python.
 var PythonTestCase = types.TestCase{
 	Content: `
 # Single line
