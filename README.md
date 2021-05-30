@@ -25,7 +25,7 @@ import (
 
 func main() {
     file, _ := os.Open(path)
-    set, _ := symbols.GetSetByExtension("go")
+    set, _ := symbols.GetSetByExtension(".go")
     comments := compars.Parse(file, set)
     fmt.Printf("%d comments are found", len(comments))
 }
